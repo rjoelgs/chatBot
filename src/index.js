@@ -1,10 +1,10 @@
 const express = require("express");
 const apiruta = require("./routes/ruta");
-
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
