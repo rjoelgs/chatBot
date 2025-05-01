@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const apicontroller = require("../controller/apicontroller");
 
-router.get("/verificar", apicontroller.verificar);
+router.get("/", apicontroller.verificar);
 
-router.post("/recibir", apicontroller.recibir);
+router.post("/", apicontroller.recibir);
 
 
 
