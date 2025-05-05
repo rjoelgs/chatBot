@@ -8,12 +8,12 @@ const sendMessage = (from, text) => {
 
     const options = {
         hostname: "chatbot-hv00.onrender.com",
-        path: "/api/verificar",
+        path: "/api",
         method: "POST",
         body: data,
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "EAAPrKD01YIoBOylWyZAxGyriB6jZCZBqJuRq698EPZCwo8Bl8NCPO7U4UZBGtZBXnFZBG15eLQ33jsSTZCX16jC7OsosqzILNZBmwZCPg6bbsVMnJFbYd20OdYFzQoVKBGWmSSxSZCJIkEExBbb0JyMIW7rQ0rIzyez1P72MZBKdHNMqgXBOzBodhG9zcmc376YpjsuG33uccim95ReViGi4Jt144AYy"
+            "Authorization": "EAAPrKD01YIoBO5A23oZBMEmbOGBOVqU3oPZA2MDm0eddhaXEZAvF2exllJ1s66MdZARZCdPQPKL6SE9jJiDsvSw1XX1qg0TgG0jQZAa6wtMWNtkSyy5rNKSdcERIjHpJMxpzZBUeUNxEPzFmTXXoVjwcoRRtdzZBqxZARAZBj2JYOel4JJtNDSghOl63LJuXEWxeZCYcREClPnLibx6Hr8ZByP4ys6zB"
         }
     };
 
