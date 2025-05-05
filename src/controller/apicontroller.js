@@ -20,27 +20,31 @@ const verificar = (req, res) => {
 };
 
 const recibir = (req, res) => {
-    
-    try{
-        let entry = req.body.entry[0];
-        let changes = entry.changes[0];
-        let value = changes.value;
-        let messages = value.messages;
-        let message = messages[0];
-        let from = message.from;
-        let text = message.text.body;
-            
+    try {
+        const entry = req.body.entry?.[0];
+        const changes = entry?.changes?.[0];
+        const value = changes?.value;
+        const messages = value?.messages;
+
+        if (!messages || messages.length === 0) {
+            console.log("No messages found in payload");
+            return res.send("EVENT_RECEIVED");
+        }
+
+        const message = messages[0];
+        const from = message.from;
+        const text = message.text?.body;
 
         console.log(from);
         console.log(text);
-        sendMessage(from, text)
-        
+
+        sendMessage(from, text);
         res.send("EVENT_RECEIVED");
-    }catch(e){
-        console.log(e);
+
+    } catch (e) {
+        console.error("Error handling webhook:", e);
         res.send("EVENT_RECEIVED");
     }
-    
 };
 
 module.exports = { verificar, recibir };
