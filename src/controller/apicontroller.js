@@ -25,12 +25,6 @@ const recibir = (req, res) => {
         const changes = entry?.changes?.[0];
         const value = changes?.value;
         const messages = value?.messages;
-
-        if (!messages || messages.length === 0) {
-            console.log("No messages found in payload");
-            return res.send("EVENT_RECEIVED");
-        }
-
         const message = messages[0];
         const from = message.from;
         const text = message.text?.body;
