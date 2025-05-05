@@ -23,9 +23,14 @@ const recibir = (req, res) => {
         let entry = req.body.entry[0];
         let changes = entry.changes[0];
         let value = changes.value;
-       
+        let messages = value.messages;
+        let message = messages[0];
+        let from = message.from;
+        let text = message.text;
+            
 
-        console.log(value);
+        console.log(from);
+        console.log(text);
         
         res.send("EVENT_RECEIVED");
     }catch(e){
