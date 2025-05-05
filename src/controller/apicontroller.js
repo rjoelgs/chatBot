@@ -9,7 +9,7 @@ const verificar = (req, res) => {
         } else {
             res.send("Error");
         }
-
+        
         console.log(req);
     } catch (error) {
         console.log(error);
@@ -18,8 +18,8 @@ const verificar = (req, res) => {
 };
 
 const recibir = (req, res) => {
-    console.log("recibir");
-    res.send("recibir");
+    console.log(req);
+    res.send("EVENT_RECEIVED");
 };
 
 module.exports = { verificar, recibir };
