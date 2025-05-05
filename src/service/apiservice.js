@@ -8,7 +8,7 @@ const sendMessage = (from, text) => {
 
     const options = {
         hostname: "chatbot-hv00.onrender.com",
-        path: "/v1/messages",
+        path: "/api/verificar",
         method: "POST",
         body: data,
         headers: {
