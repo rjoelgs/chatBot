@@ -1,3 +1,5 @@
+const { sendMessage } = require("../service/apiservice");
+
 const verificar = (req, res) => {
     try {
         let tokenCode = "UNDERTOKEN";
@@ -26,11 +28,12 @@ const recibir = (req, res) => {
         let messages = value.messages;
         let message = messages[0];
         let from = message.from;
-        let text = message.text;
+        let text = message.text.body;
             
 
         console.log(from);
         console.log(text);
+        sendMessage(from, text)
         
         res.send("EVENT_RECEIVED");
     }catch(e){
