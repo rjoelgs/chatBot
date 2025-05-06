@@ -18,7 +18,6 @@ const sendMessage = (from, text) => {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Content-Length": Buffer.byteLength(data),
             "Authorization": "EAAPrKD01YIoBO5A23oZBMEmbOGBOVqU3oPZA2MDm0eddhaXEZAvF2exllJ1s66MdZARZCdPQPKL6SE9jJiDsvSw1XX1qg0TgG0jQZAa6wtMWNtkSyy5rNKSdcERIjHpJMxpzZBUeUNxEPzFmTXXoVjwcoRRtdzZBqxZARAZBj2JYOel4JJtNDSghOl63LJuXEWxeZCYcREClPnLibx6Hr8ZByP4ys6zB"
         }
     };
