@@ -25,6 +25,7 @@ const recibir = (req, res) => {
         const changes = entry?.changes?.[0];
         const value = changes?.value;
         const messages = value?.messages;
+        console.log(messages)
 
         if (!messages || !Array.isArray(messages) || messages.length === 0) {
             console.error("No messages found in webhook payload:", req.body);
