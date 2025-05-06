@@ -13,8 +13,8 @@ const sendMessage = (from, text) => {
     });
 
     const options = {
-        host: "chatbot-hv00.onrender.com",
-        path: "/api/",
+        host: "https://graph.facebook.com",
+        path: "/v22.0/683869301467202/messages",
         method: "POST",
         headers: {
             "Content-Type": "application/json",
