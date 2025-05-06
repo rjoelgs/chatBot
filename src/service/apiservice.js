@@ -2,14 +2,14 @@ const https = require("https");
 
 const sendMessage = (from, text) => {
     const data = JSON.stringify({
-        "messaging_product": "whatsapp",
-        "recipient_type": "individual",
-        "to": "526181387485",
-        "type": "text",
-        "text": {
-            "preview_url": false,
-            "body": "hola esta es mi primer respuesta"
-        }
+      "messaging_product": "whatsapp",    
+    "recipient_type": "individual",
+    "to": "526181387485",
+    "type": "text",
+    "text": {
+        "preview_url": false,
+        "body": "hello world"
+    }
     });
 
     const options = {
