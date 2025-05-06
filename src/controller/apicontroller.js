@@ -34,7 +34,7 @@ const recibir = (req, res) => {
         // console.log(from);
         // console.log(text);
 
-        sendMessage(from, text);
+        // sendMessage(from, text);
         res.send("EVENT_RECEIVED");
 
     } catch (e) {
