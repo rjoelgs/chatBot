@@ -31,10 +31,7 @@ const recibir = (req, res) => {
         const from = message.from;
         const text = message.text?.body;
 
-        // console.log(from);
-        // console.log(text);
-
-        // sendMessage(from, text);
+        sendMessage(from, text);
         res.send("EVENT_RECEIVED");
 
     } catch (e) {

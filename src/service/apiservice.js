@@ -2,12 +2,18 @@ const https = require("https");
 
 const sendMessage = (from, text) => {
     const data = JSON.stringify({
-        from: from,
-        text: text
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": "526181387485",
+        "type": "text",
+        "text": {
+            "preview_url": false,
+            "body": "hola esta es mi primer respuesta"
+        }
     });
 
     const options = {
-        hostname: "chatbot-hv00.onrender.com",
+        host: "chatbot-hv00.onrender.com",
         path: "/api/",
         method: "POST",
         headers: {
@@ -18,18 +24,13 @@ const sendMessage = (from, text) => {
     };
 
     const req = https.request(options, (res) => {
-        let responseData = "";
-        res.on("data", (chunk) => {
-            responseData += chunk;
+            res.on("data", (d) => {
+                process.stdout.write(d)
         });
-        res.on("end", () => {
-            console.log("Response from server:", responseData);
-        });
+       
     });
 
-    req.on("error", (e) => {
-        console.error("Error sending message:", e);
-    });
+    
 
     req.write(data);
     req.end();
