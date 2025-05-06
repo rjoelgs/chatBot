@@ -13,7 +13,7 @@ const sendMessage = (from, text) => {
     });
 
     const options = {
-        host: "https://graph.facebook.com",
+        host: "graph.facebook.com",
         path: "/v22.0/683869301467202/messages",
         method: "POST",
         headers: {
