@@ -19,7 +19,7 @@ const sendMessage = (from, text) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer EAAPrKD01YIoBOzzazs6bFvLAKZAXxSGNiayzS5xZByZCyzJYhdNlTTSzghhoZCpeAiiZART7KOMuSWqZBdo7QjmJHVO4e51R5YMzzjr9nzNa0joV4aTIUMjlaOZB27xIsEEI1dCJfZBsjB0FArO0cmgqzdDawzh1AOf0AwVadyW1e2nF0oIcCZCHGouKk77ahFipIcVZBFf7irRQ3cEnosWZB9ZCXfNl"
+                "Authorization": "Bearer EAAPrKD01YIoBO2vOqQ3Dpu5VH4qZCypCx1AFiMMrs9twDweskZAICe0thCKTE0wnZCZCsC6fe1R3zJceDsZC3gZByRjvPWvVNT8y5x7WGDUlvAtnmr0AoJBtJiMrAKz7tifLc0ZCddufhGGQtDaYr44uZBozj3DdMZBGZCTdXmp5VvG3J5q7DeIp1ngYrugI2x90STeP53SAc05T1C5ZAHanvYs08GX"
             }
         };
 
