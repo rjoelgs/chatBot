@@ -15,7 +15,7 @@ const sendMessage = (from, text) => {
 
         const options = {
             host: "graph.facebook.com",
-            path: "/v22.0/1772251253690527/messages",
+            path: "/v22.0/683869301467202/messages",
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
