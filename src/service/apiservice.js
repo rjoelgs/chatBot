@@ -19,11 +19,19 @@ const sendMessage = (from, text) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "EAAPrKD01YIoBOzzazs6bFvLAKZAXxSGNiayzS5xZByZCyzJYhdNlTTSzghhoZCpeAiiZART7KOMuSWqZBdo7QjmJHVO4e51R5YMzzjr9nzNa0joV4aTIUMjlaOZB27xIsEEI1dCJfZBsjB0FArO0cmgqzdDawzh1AOf0AwVadyW1e2nF0oIcCZCHGouKk77ahFipIcVZBFf7irRQ3cEnosWZB9ZCXfNl"
+                "Authorization": "Bearer EAAPrKD01YIoBOzzazs6bFvLAKZAXxSGNiayzS5xZByZCyzJYhdNlTTSzghhoZCpeAiiZART7KOMuSWqZBdo7QjmJHVO4e51R5YMzzjr9nzNa0joV4aTIUMjlaOZB27xIsEEI1dCJfZBsjB0FArO0cmgqzdDawzh1AOf0AwVadyW1e2nF0oIcCZCHGouKk77ahFipIcVZBFf7irRQ3cEnosWZB9ZCXfNl"
             }
         };
 
+        console.log('Enviando mensaje con los siguientes datos:');
+        console.log('URL:', `https://${options.host}${options.path}`);
+        console.log('Datos:', data);
+        console.log('Headers:', options.headers);
+
         const req = https.request(options, (res) => {
+            console.log('Status Code:', res.statusCode);
+            console.log('Headers:', res.headers);
+            
             let responseData = '';
             
             res.on("data", (d) => {
