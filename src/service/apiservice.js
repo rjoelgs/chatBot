@@ -9,7 +9,7 @@ const sendMessage = (from, text) => {
             "type": "text",
             "text": {
                 "preview_url": false,
-                "body": text || "hello world"
+                "body": " Hola soy el asistente virtual de Joel, en que te puedo ayudar? \n porfavor ingresa de la lista \n1 hablar con joel \n2 sigueme atendiendo el bot"
             }
         });
 
