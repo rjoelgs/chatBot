@@ -31,7 +31,31 @@ const sendMessage = (from, text) => {
             });
 
             res.on("end", () => {
-                console.log('Respuesta del servidor:', responseData);
+                try {
+                    const parsedResponse = JSON.parse(responseData);
+                    if (parsedResponse.error) {
+                        console.error('Error de la API de Facebook:', {
+                            mensaje: parsedResponse.error.message,
+                            tipo: parsedResponse.error.type,
+                            código: parsedResponse.error.code,
+                            subcódigo: parsedResponse.error.error_subcode
+                        });
+                        
+                        // Manejo específico de errores comunes
+                        if (parsedResponse.error.code === 100) {
+                            console.error('El ID del objeto no existe o no tienes los permisos necesarios.');
+                            console.error('Por favor, verifica:');
+                            console.error('1. Que el ID de la aplicación sea correcto');
+                            console.error('2. Que el token de acceso tenga los permisos necesarios');
+                            console.error('3. Que la aplicación esté correctamente configurada en el panel de desarrolladores de Facebook');
+                        }
+                    } else {
+                        console.log('Mensaje enviado exitosamente:', parsedResponse);
+                    }
+                } catch (parseError) {
+                    console.error('Error al procesar la respuesta:', parseError.message);
+                    console.log('Respuesta raw:', responseData);
+                }
             });
         });
 
@@ -43,7 +67,7 @@ const sendMessage = (from, text) => {
         req.end();
     } catch (error) {
         console.error('Error al enviar el mensaje:', error.message);
-        throw error; // Re-lanzamos el error para que pueda ser manejado por el código que llama a esta función
+        throw error;
     }
 };
 
