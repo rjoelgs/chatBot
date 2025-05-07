@@ -9,13 +9,13 @@ const sendMessage = (from, text) => {
             "type": "text",
             "text": {
                 "preview_url": false,
-                "body": "hello world"
+                "body": text || "hello world"
             }
         });
 
         const options = {
             host: "graph.facebook.com",
-            path: "/v22.0/683869301467202/messages",
+            path: "/v22.0/1772251253690527/messages",
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
